@@ -1,0 +1,53 @@
+Mail rezim
+==========
+
+U Mail rezim se ulazi kucanjem MAIL ili MA. Mijenja se prompt u "Mail>"
+i dostupne su mail naredbe:
+
+  ?                   ANSwer              ATtach              CLS
+  DELete              DIR                 EXit               [FIND]
+  HELP                REad                REPly               SEnd
+  UNATtach            UNDELete
+
+
+ANSwer,REPly - Odgovara na poruku
+               (rep 120)
+
+ATtach       - Kaci uz poruku fajl iz Pad-a
+               (at 120 junk.zip)
+
+UNATtach     - Brise fajl koji je zakacen na poruku
+               (unat 120)
+
+DELete       - Oznacava poruku obrisanu, primalac je nece evidentirati
+               (del 120)
+
+UNDELete     - Vraca obrisanu poruku
+               (undel 120)
+
+DIR,LIST     - Daje spisak novih ili starih poruka
+               (dir) (dir 40- /a)
+
+REad         - Cita poruke
+               (re) (re /a)
+
+SEnd         - Salje poruku
+               (se anubis)
+
+EXit         - Izlaz iz Mail moda
+               (ex) (..)
+
+Svi rezultati se mogu preusmjeriti u PAD dodatkom znaka za redirekciju >.
+Naredbe se mogu i skraceno pisati npr:
+   re - read
+   se - send
+,ili iz komandnog moda sa npr:
+   ma re - mail read
+   ma li - mail list
+   ma se anubis - mail send anubis
+Moguce je i startovati bilo koju naredbu iz komandnog moda sa dodavanjem
+na pocetak linije !.
+
+Npr: Mail ¯ !show
+     Mail ¯ !pad dir
+     Mail ¯ !auto run
