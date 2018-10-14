@@ -1,0 +1,290 @@
+[LOG]
+Making log file for BBS.
+
+   LOG [ON|OFF|NAME|STATUS]
+[EOD]
+
+[SHOW]
+Showing different informations.
+
+   SHow [TIme|DAte]
+[EOD]
+
+[ARCHIVE VIEW]
+Archive view. View ZIP,ARJ,LZH archives.
+
+   VIew [path]<filespec>.[ext] [/b] [/w] [/c]
+		 /B - supress path display
+		 /W - wide display
+		 /C - comments display
+[EOD]
+
+[TYPE]
+Type file name to screen. Same as DOS.
+
+   TYpe <filename>
+[EOD]
+
+[CHANGE DIRECTORY]
+Change directory. Same as DOS.
+
+   CD [dir]
+		 \ - Go straight to root
+			.. - Go one level down
+[EOD]
+
+[LOGOUT]
+Log out from BBS.
+
+   LogOut
+[EOD]
+
+[CLS]
+Clears the entire screen. Same as DOS.
+
+   CLS
+[EOD]
+
+[TREE]
+Showing directory structure.
+
+   TREE
+[EOD]
+
+[FINGER]
+Display all users on BBS.
+
+   FINger [username]
+[EOD]
+
+[KILL]
+Delete user from user base.
+
+   KILL <username>
+[EOD]
+
+[MEM]
+Showing memory. Used DOS command MEM.
+
+   MEM [switch]
+[EOD]
+
+[HELP]
+Show all available commands.
+
+   HELP [/?]
+[EOD]
+
+[ALL]
+Show all datas for all or specific user.
+
+   ALL [username]
+[EOD]
+
+[NEW]
+Creates new user on BBS.
+
+   NEW
+[EOD]
+
+[RELOG]
+Make new login without exiting BBS.
+
+   RELOG
+[EOD]
+
+[RESUME]
+Show most importan datas about specific user.
+
+   RESume <username>
+[EOD]
+
+[DIR]
+Showing directory. Same as DOS.
+
+   DIr [path][filter]
+[EOD]
+
+[DELETE]
+Deleting file. Same as DOS.
+
+   DELete <filename>
+[EOD]
+
+[MAKE DIRECTORY]
+Makes directory. Same as DOS.
+
+   MD <directory>
+[EOD]
+
+[REMOVE DIRECTORY]
+Removes directory. Same as DOS.
+
+   RD <directory>
+[EOD]
+
+[SHELL]
+Go to shell or execute command.
+
+   OS [command]
+[EOD]
+
+[STAT]
+Giving most important information about user.
+
+   STAT [username]
+[EOD]
+
+[SET]
+Setting protocol,password,olr,width...
+
+   SET [ANSI|ARChiver|PROtocol|PASsword|OLR|WIdth|FIRM]
+[EOD]
+
+
+[RENAME]
+Renames file.
+
+   REName <Source> <Target>
+[EOD]
+
+[MAIL READ]
+Read mail(s).
+
+   REad [from<->] [/a] [> [filename] ]
+[EOD]
+
+[MAIL SEND]
+Send mail to user.
+
+   SEnd <Username>
+[EOD]
+
+[MAIL REPLY]
+Answers on recived mail.
+
+   REP <number of mail>
+[EOD]
+
+[MAIL LIST]
+Prints list of mail messages.
+
+   LIst [from<->] [/a]
+[EOD]
+
+[MAIL DELETE]
+Mark mail as deleted.
+
+   DELete <number of mail>
+[EOD]
+
+[MAIL UNDELETE]
+Undeleted mail.
+
+   UNDELete <number of mail>
+[EOD]
+
+[MAIL ATTACH]
+Attach file from PAD on message.
+
+   ATtach <number> <file>
+[EOD]
+
+[MAIL UNATTACH]
+Unattaching file from mail message.
+
+   UNATtach <number>
+[EOD]
+
+[DESCRIBE]
+Create, modify, or delete file(s) and subdirectory descriptions.
+
+   DESCribe <file(s)>
+[EOD]
+
+[ECHO]
+Display a message in uppercase.
+
+   ECHO [message]
+[EOD]
+
+[COPY]
+Copy source to target file.
+
+   COPY <source> <target>
+[EOD]
+
+[PAD COMPRESS]
+Make archive from all *.log files (without arguments).
+
+   COMpress [file(s)]
+[EOD]
+
+[PAD SIZE]
+Return total size of Pad in bytes.
+
+   SIze
+[EOD]
+
+[AUTOEXEC RUN]
+Starts Batch File.
+
+   RUN
+[EOD]
+
+[AUTOEXEC TRACE]
+Executes one by one command, waiting for Enter to proceed.
+
+   TRACE
+[EOD]
+
+[AUTOEXEC DELETE]
+Delete Bach File.
+
+   DELete
+[EOD]
+
+[AUTOEXEC VIEW]
+View Batch File.
+
+   VIew
+[EOD]
+
+[RESUME SHOW]
+Full user resume.
+
+   SHow <UserName>
+[EOD]
+
+[RESUME QUICK]
+Quick user resume.
+
+   QUick <UserName>
+[EOD]
+
+[RESUME CLEAR]
+Delete yours resume.
+
+   CLEAR
+[EOD]
+
+[REBOOT]
+Rebooting system.
+
+   REBOOT <Warm|Cold>
+[EOD]
+
+[DISPLAY]
+Displaying structure of specific base. Works only on local session.
+
+   DISPLAY <BBSBase|BigBase|MailBase>
+[EOD]
+
+[SONIC VERSION]
+Sonic BBS v4.10.13 Copyright (c) 1994 by Igor LonÅareviÜ.
+[EOD]
+
+
+[IGOR LONCAREVIC]
+Tip je brrrrrrrrrrr...... :)
+[EOD]

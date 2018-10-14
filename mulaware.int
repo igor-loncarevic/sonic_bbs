@@ -1,0 +1,144 @@
+Unit MulAware;
+{
+  Multitasking Routines for TP 6.0
+
+  Copyright (c) 1991,1992 A.B.S. - ALL RIGHTS RESERVED
+
+  1.00+  Internal Use Only
+  2.00   First Distributed Release
+  2.10   Fixed Windows Checking
+  2.11   Took out VMiX Code
+  2.20   Fixed DDOS Code - Locking up Novell
+  2.21   Fixed Code - Tried to be too smart for my own good
+  2.22   Fixed Code Again - Was Checking for DV 2.40+ instead of 2.26+
+  3.00   Complete ReWrite
+  3.01   Minor Update
+  3.10   Optimizations
+}
+
+{$A-,B-,D-,F-,I-,N-,O-,R-,S-,V-}
+
+Interface
+
+Const
+  MulAwareVer = '3.10';
+
+Type
+  MultiType = (None,          {No Supported MultiTasker Found}
+               DESQview,      {DESQview 2.26+}
+               TopView,       {TopView, TaskView, DESQview 2.00- 2.25,
+                               OmniView, or Compatible}
+               TaskSwitcher,  {MS DOS 5.0 Task Switcher or Compatible}
+               DoubleDOS,     {DoubleDOS}
+               WinEnh,        {MS Windows 3.x in Enhanced Mode}
+               Win386,        {MS Windows 386 v2.xx}
+               WinStandard,   {MS Windows in Real or Standard Mode}
+               OS2};          {OS/2 1.3 or 2.0}
+
+
+Var
+  MultiTasker : MultiType;
+
+Procedure TimeSlice;
+{
+ Causes the current task to give up the rest of its time slice.
+ Useful in loops while waiting for keyboard input.  This procedure
+ calls the DOS idle interrupt if MultiTasker = None.
+
+ example:
+   While not Keypressed do TimeSlice;
+
+ Supported by:
+   None
+   DESQview
+   WinEnh
+   OS2
+   DoubleDOS
+   TopView
+   Win386
+   TaskSwitcher
+   Win286
+}
+
+Procedure PreventSwitching;
+{
+ Suspends multitasking and only services the current task.  Useful during
+ critical program functions.  Don't leave on for too long!  Call
+ ResumeSwitching to resume multitasking.
+
+ Supported by:
+   DESQview
+   WinEnh
+   DoubleDOS
+   TopView
+}
+
+Procedure ResumeSwitching;
+{
+ Called to resume multitasking after it has been suspended by
+ PreventSwitching.
+
+ Supported by:
+   DESQview
+   WinEnh
+   DoubleDOS
+   TopView
+}
+
+Function  MulVersion : Word;
+{
+ Returns the Version Number.  The high byte contains the major number, and
+ the low byte contains the minor number.  The number may be accessed like
+ this - WriteLn('Version ', Hi(MulVersion), '.', Lo(MulVersion)).
+
+ Example:
+   DESQview 2.42 returns $022A (554).
+
+ Supported by:
+   DESQview
+   WinEnh
+   OS2
+   TopView (returns 0 for TaskView & DESQview 2.00-2.25}
+}
+
+Function  VirtualBuffer : Word;
+{
+ Returns the address of the virtual video buffer.  Useful for doing
+ direct screen writes without 'bleed through'.  Under DoubleDOS, this
+ procedure must be called everytime you wish to do a direct write,
+ because the buffer changes.  The standard video address is returned
+ under a non-supported multitasker.  This is only valid for standard
+ text modes!
+
+ Supported by:
+   DESQview
+   DoubleDOS
+   TopView
+}
+
+Procedure TV_UpdateBuffer(Num : Word; Buffer, CharOffset : Word);
+{
+ Must be called when running under TaskView or clones to update the
+ screen from the virtual buffer.  This may be called under DESQview,
+ but doing so will cause DESQview to stop updating the screen
+ automatically.  Num contains the number of sequential characters
+ that were changed.  Buffer:CharOffset points to the first character
+ changed.  Buffer is the VirtualBuffer.  CharOffset is the Offset of
+ the first character changed.
+
+ Do NOT call with Num = 0!
+
+ Supported by:
+   DESQview
+   TopView
+}
+
+Function  DDOS_Visible : Boolean;
+{
+ Returns true if the current task is the visible task under DoubleDOS.
+ Returns false if DDOS NOT running OR if the current task is the
+ invisible task.  You must check MultiTasker if a false is returned.
+
+ Supported by:
+   DoubleDOS
+}

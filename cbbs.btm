@@ -1,0 +1,13 @@
+Echo Batch v0.19.9 by Igor Loncarevic
+Echo.
+tpc.exe /E\tp6\exe /B /T\tp6 /GD /U\tp6\exe BBS.PAS /$X+
+
+cd \tp6\exe\
+dir bbs.exe /m
+kopi
+
+rem
+rem Kad je kstack.com ucitan onda ide automatski login
+rem
+rem keystack "anubis" enter "s" enter ^ bbs l
+rem
